@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors')
 const mongoose = require('mongoose');
+const path = require('path')
 const PORT = process.env.PORT || 3000;
 
 
@@ -120,4 +121,4 @@ app.post('/login', async (req,res)=>{
 
 
 
-app.listen(PORT)
+app.listen(PORT,console.log("sever"))
