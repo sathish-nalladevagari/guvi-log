@@ -1,5 +1,5 @@
 .container{
-    
+    gap: 180px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -10,8 +10,10 @@
 }
 .home-left ,.home-right{
     display: flex;
+    border-radius: 5px;
     justify-content: center;
     align-items: center;
+    
      
 }
 
@@ -21,8 +23,17 @@ img{
 .left-content{
     display: flex;
     flex-direction: column;
+    border-radius: 10px ;
+    width: 60%;
     justify-content: center;
+    
     box-shadow: 10px 0px 40px 20px #888888;
+}
+@media screen and (min-width:650px) {
+    .left-content{
+        margin: 20px 0px 0px 40px;
+    }
+    
 }
 button{
     padding: 10px 16px;
