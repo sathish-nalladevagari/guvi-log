@@ -2,10 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "MongoSchema.js",
+  "main": "api.js",
   "scripts": {
-    "start": "node api.js",
-    "check": "nodemon ./api.js",
+    "start": "nodemon ./api.js",
+    
     "heroku-postbuild": "cd client && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
