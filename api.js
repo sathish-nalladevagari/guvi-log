@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors')
 const mongoose = require('mongoose');
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 3000;
 
 
 
@@ -31,7 +31,7 @@ url ="mongodb+srv://data:test1234@cluster1.3gbrs9r.mongodb.net/data?retryWrites=
 
 mongoose.connect(url,(err)=>{
     if (err) throw err;
-    console.log("Database connected")
+
 })
 
 app.use(express.static(path.join(__dirname, "/client/build")));
@@ -111,7 +111,7 @@ app.post('/login', async (req,res)=>{
         
     }
     catch(err){
-        console.log("invalid email")
+        
         res.json({ status: "error" ,error : 'invalid email'})
 
     }
@@ -120,5 +120,4 @@ app.post('/login', async (req,res)=>{
 
 
 
-app.listen(PORT,
-    console.log("server started"))
+app.listen(PORT)
