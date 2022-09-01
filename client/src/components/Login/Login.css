@@ -1,0 +1,14 @@
+input{
+    width: 250px;
+    height: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 0;
+}
+.btn{
+    width: 130px;
+    height: 30px;
+}
+*{
+    font-family: var(--sub);
+}
