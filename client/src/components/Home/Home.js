@@ -3,12 +3,26 @@ import './Home.css'
 import Image from '../Content/Image'
 import { Link } from 'react-router-dom'
 import Navbar from '../Navbar/Navbar'
+import axios from 'axios';
+
+
+
 
 
 
 
 
 function Home() {
+  
+  window.onload = function(){
+    axios.post("http://localhost:8080/")
+    .then((res)=>{
+      if (res.data.user === true){
+        window.location.href = "/profile";
+      }
+    })
+  }
+  
   
 
   return (

@@ -14,7 +14,7 @@ function Login() {
     var payload  = { loginemail , loginpassword}
     e.preventDefault();
 
-    axios('https://guvi-log.herokuapp.com/login', {
+    axios('http://localhost:8080/login', {
       method: 'POST',
       headers: {
           "Content-type": "application/json"
@@ -22,11 +22,14 @@ function Login() {
       data :payload
     
   }).then((res)=>{
-      if(res.status === 201){
+    console.log(res)
+    
+
+      if(res.data.success === true){
         window.location.href = '/profile'
         alert("login successful")
       }
-      else if (res.status === 202){
+      else if (res.data.status === false){
         window.location.href = "/signup"
         alert("login unsuccessful")
       }

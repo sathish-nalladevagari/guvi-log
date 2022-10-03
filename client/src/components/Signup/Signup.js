@@ -19,7 +19,7 @@ function Signup() {
     console.log(payload)
 
 
-    axios('https://guvi-log.herokuapp.com/signup', {
+    axios('http://localhost:8080/signup', {
       method: 'POST',
       headers: {
           "Content-type": "application/json"
