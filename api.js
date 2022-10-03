@@ -11,7 +11,7 @@ const RedisSessions = require("redis-sessions");
 var rs = new RedisSessions();
 var redis = require("redis");
 const { Cookie } = require('express-session');
-const session = require('express-session');
+
 
 
 var redisClient = redis.createClient();
@@ -23,9 +23,10 @@ var redisClient = redis.createClient();
 redisClient.connect();
 
 redisClient.on("connect", function (err) {
+    if (err) throw err;
     console.log("Connected to redis successfully");
 });
-  
+   
 // rs.create({
 //     app: "guvi",
 //     id:"username",
@@ -76,7 +77,8 @@ var tableSchema = mongoose.Schema({
     UserName :{ type : String ,required : true},
     Email: { type: String , lowercase:true , unique:true, required:true},
     DateOfBirth : { type: Date ,default:100 },
-    Password : { type: String ,required:true}
+    Password : { type: String ,required:true},
+    Files :{type:Array}
     
 })
 
